@@ -4,22 +4,27 @@ export default function Navbar({ theme, toggleTheme }) {
   return (
     <header id="header">
       <nav id="navbar" aria-label="Main Navigation">
-        <div className="brand-title">Sudeep Kumar Surya</div>
+        <a href="#hero" className="brand-link" aria-label="Sudeep Kumar Surya">
+          <span className="brand-badge" aria-hidden="true"></span>
+          <span>Sudeep.dev</span>
+        </a>
+
         <ul className="nav-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#hero">Overview</a></li>
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#skills">Stack</a></li>
+          <li><a href="#about">Story</a></li>
           <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Profiles</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li>
             <button
               type="button"
               className="theme-toggle-btn"
               onClick={toggleTheme}
-              aria-label="Toggle theme"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
-              {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+              <span>{theme === 'dark' ? '☀️' : '🌙'}</span>
+              <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
             </button>
           </li>
         </ul>
